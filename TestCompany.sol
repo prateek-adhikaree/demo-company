@@ -17,5 +17,9 @@ contract TestCompany is Company {
     }
     
     function testGetHoursLogged () public {
+		address employee = 0xca35b7d915458ef540ade6068dfe2f44e8fa733c;
+        uint totalHours = getHoursLogged(employee);
+        logHour(2);
+        assert(getHoursLogged(employee) == totalHours + 2);
     }
 }
